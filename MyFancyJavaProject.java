@@ -1,6 +1,18 @@
+class Singleton {  
+    //Eager Loading Singleton object
+    private static Singleton obj = null;  
+
+    private Singleton() {  
+        obj = new Singleton();  
+    }  
+  
+    public static Singleton getInstance() {  
+        return obj;  
+    }  
+}  
 public class CsharpCorner {  
     public static void main(String[] args) {  
-        CsharpCorner c1 = new CsharpCorner();  
-        CsharpCorner c2 = new CsharpCorner();  
+        Singleton c1 = Singleton.getInstance();  
+        Singleton c2 = Singleton.getInstance();  
     }  
-}
+}  
